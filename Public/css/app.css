@@ -74,7 +74,7 @@ body {
     gap: 2vw;
 }
 
-.slide label {
+.slide .containerparent1 label {
     width: 30px;
     padding-block: 5px;
     background-color: var(--bk-close);
@@ -86,7 +86,7 @@ body {
     box-sizing: border-box;
 }
 
-.slide label:hover {
+.slide .containerparent1 label:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     transform: translateX(-2px);
     cursor: pointer;
@@ -105,6 +105,12 @@ body {
     background-repeat: no-repeat;
     background-size: 20px;
     padding-inline-start: 40px;
+}
+
+input[type="text"]:focus {
+    border: 1px solid var(--bak-card-slide); 
+
+
 }
 
 /* ======= list in slider ========== */
@@ -137,7 +143,7 @@ li:hover {
     color: var(--bak-card-slide);
     border: 2px solid var(--bak-card-slide);
     box-shadow: 0 0 10px 0px var(--bak-card-slide);
-    border-radius: 0.5rem ;
+    border-radius: 0.5rem;
 }
 
 li div {
@@ -164,7 +170,8 @@ li .word {
     box-sizing: border-box;
     color: var(--sconder-fnt-color);
 }
-li .num{
+
+li .num {
     width: 2vw;
     padding-block: 1vh;
     background-color: red;
@@ -173,10 +180,55 @@ li .num{
     align-items: center;
     box-sizing: border-box;
     color: var(--sconder-fnt-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-#check:checked ~ .slide li{
+#check:checked~.slide li {
     justify-content: center;
-  
+
+}
+
+/* ========= finish the list slider ============ */
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line svg {
+    width: 30px;
+    fill: var(--color-element-slide);
+    cursor: pointer;
+}
+.line p{
+    color: var(--color-element-slide);
+}
+
+.sentence p{
+    color: var(--sconder-fnt-color);
+    padding: 2vh 1vw;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+
+
+}
+.sentence .first{
+    background-color: var(--bak-card-slide);
+    border-radius:0.5rem ;
+    width: 80%;
+    box-shadow: 0 0 8px var(--bak-card-slide);
+}
+.sentence{
+    transition: 1.5s; 
+}
+
+#check:checked ~.slide .line{
+    display: none;
+}
+#group{
+    opacity: 0;
+}
+
+#group:checked +label+.sentence{
+    translate:0 -20px;
+    opacity: 0;
 }
