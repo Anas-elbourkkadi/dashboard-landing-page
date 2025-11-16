@@ -1,73 +1,182 @@
-
-
-:root{
-    --color-border:#0047AB;
-    --color-bk-slide:#D3D3D3;
+:root {
+    --bak-body: #091212;
+    --bak-slide: #1d2626;
+    --bak-card-slide: #00abb8;
+    --color-element-slide: #a4a8a8;
+    --color-font-table: #cacccc;
+    --bk-close: #475569;
+    --in-color: #0f1414;
+    --sconder-fnt-color: #edeef0;
 }
 
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     text-transform: capitalize;
 }
-.slide{
-    width: 30%;
+
+body {
+    background-color: var(--bak-body);
+}
+
+.slide {
+    width: 25%;
+    background-color: var(--bak-slide);
+    border-right: 1px var(--bak-card-slide) solid;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
     height: 100vh;
-    background-color: var(--color-bk-slide);
-    padding-block: 3%; 
-    transition: 1s;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    padding-block: 2vh;
+    gap: 2vh;
+    overflow: hidden;
+    transition: 2s;
+    padding-inline: 15px;
 }
 
-.search{
-    padding-inline: 20px;
+.title img {
+    width: 40px;
 }
 
-   
-.material-symbols-outlined {
-  font-variation-settings:
-    "wght" 900,   
-    "FILL" 0,
-    "GRAD" 0,
-    "opsz" 48;
-}
-
-
-.slide:hover{
-    width: 30%;
-
-} 
-
-.title img{
-    width: 35px;
-}
-.title{
+.containerparent1 {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1vw
 }
-.containerparent1{
+
+.title {
+    display: flex;
+    gap: 1vw;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~.slide {
+    width: 8%;
+}
+
+.slide h1 {
+    color: var(--sconder-fnt-color);
+}
+
+#check:checked~.slide p,
+#check:checked~.slide h1,
+#check:checked~.slide input {
+    display: none;
+}
+
+#check:checked~.slide .containerparent1 {
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.slide label {
+    width: 30px;
+    padding-block: 5px;
+    background-color: var(--bk-close);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.slide label:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateX(-2px);
+    cursor: pointer;
+}
+
+/* ==== syle the input in slider ========= */
+
+.slide input[type="text"] {
+    padding-block: 1vh;
+    width: 85%;
+    background-color: var(--in-color);
+    border: none;
+    color: var(--color-font-table);
+    background-image: url("../images/search.svg");
+    background-position: 4%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-inline-start: 40px;
+}
+
+/* ======= list in slider ========== */
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 20px; 
-}
-h1{
-    font-size: 28px;
+    list-style-type: none;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: 0.5s;
+
 }
 
-.search input{
-    background-image:url('../images/search.svg');
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 15px;
-    padding-left:30px ;
-    padding-block: 2vh;
-    width: 90%;
-    background-color:#A9A9A9;
-    border: none;
+li:hover svg,
+li:hover div {
+    color: var(--bak-card-slide);
+    fill: var(--bak-card-slide);
+}
 
+li:hover {
+
+    color: var(--bak-card-slide);
+    border: 2px solid var(--bak-card-slide);
+    box-shadow: 0 0 10px 0px var(--bak-card-slide);
+    border-radius: 0.5rem ;
+}
+
+li div {
+    display: flex;
+    align-items: end;
+    gap: 1vw;
+    color: var(--color-element-slide);
+
+}
+
+li svg {
+    width: 20px;
+    fill: var(--color-element-slide);
+}
+
+li .word {
+    width: 6vw;
+    padding-block: 5px;
+    background-color: var(--bk-close);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    color: var(--sconder-fnt-color);
+}
+li .num{
+    width: 2vw;
+    padding-block: 1vh;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: var(--sconder-fnt-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);    
+}
+
+#check:checked ~ .slide li{
+    justify-content: center;
+  
 }
