@@ -17,6 +17,8 @@
 
 body {
     background-color: var(--bak-body);
+    display: flex;
+
 }
 
 .slide {
@@ -109,7 +111,7 @@ body {
 
 input[type="text"]:focus {
     outline: none;
-    border: 1px solid var(--bak-card-slide); 
+    border: 1px solid var(--bak-card-slide);
 
 
 }
@@ -195,16 +197,18 @@ li .num {
     justify-content: space-between;
     align-items: center;
 }
+
 .line svg {
     width: 30px;
     fill: var(--color-element-slide);
     cursor: pointer;
 }
-.line p{
+
+.line p {
     color: var(--color-element-slide);
 }
 
-.sentence p{
+.sentence p {
     color: var(--sconder-fnt-color);
     padding: 2vh 1vw;
     margin-bottom: 1vh;
@@ -212,53 +216,173 @@ li .num {
 
 
 }
-.sentence .first{
+
+.sentence .first {
     background-color: var(--bak-card-slide);
-    border-radius:0.5rem ;
+    border-radius: 0.5rem;
     width: 80%;
     box-shadow: 0 0 8px var(--bak-card-slide);
 }
-.sentence{
-    transition: 1.5s; 
+
+.sentence {
+    transition: 1.5s;
 }
 
-#check:checked ~.slide .line{
+#check:checked~.slide .line {
     display: none;
 }
-#group{
+
+#group {
     opacity: 0;
 }
 
-#group:checked +label+.sentence{
-    translate:0 -20px;
+#group:checked+label+.sentence {
+    translate: 0 -20px;
     opacity: 0;
 }
 
 /* ===============the last section in slide bar===================*/
 
 
-.scondelist li{
+.scondelist li {
     list-style-type: none;
     display: flex;
     justify-content: center;
     color: var(--color-element-slide);
     gap: 1vw;
 }
-.scondelist{
+
+.scondelist {
     border-top: 1px solid var(--color-element-slide);
     padding-block: 5vh;
 }
 
 /* ====the sconde pate in the last side==== */
-.container{
+.container {
     display: flex;
     color: var(--color-element-slide);
     align-items: center;
     gap: 1vw;
     padding-block-start: 5vh;
 }
-.container svg{
+
+.container svg {
     width: 30px;
-    fill:var(--color-element-slide)
+    fill: var(--color-element-slide)
 }
 
+#check:checked~.slide .scondelist,
+#check:checked~.slide .container {
+    display: none;
+}
+
+/* ===== parte table ======== */
+
+.table {
+    padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+}
+
+.linetable {
+    display: flex;
+    gap: 1vw;
+    color: var(--color-element-slide);
+}
+
+.linetable svg {
+    width: 20px;
+    fill: var(--color-element-slide);
+
+}
+
+.tablecontainer {
+    display: flex;
+    gap: 1vw;
+    color: var(--sconder-fnt-color)
+}
+
+/* ========line2 in the parte table========= */
+
+.tablecontainer2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.containerline2 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.containerline2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.img {
+    position: relative;
+    left: 40px;
+
+}
+
+img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.31.jpeg"] {
+    position: relative;
+    right: 25px;
+}
+
+img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
+    position: relative;
+    right: 40px;
+}
+
+.add{
+    background-color: var(--bak-card-slide);
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px var(--bak-card-slide);
+    border-radius: 0.5rem;
+}
+.add + div{
+    background-color: var(--bak-slide);
+    border: 1px solid var(--sconder-fnt-color);
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+/* ======= the line 3 in parte table ======== */
+
+.navicons{
+    /* background-color: yellow; */
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+.navicons svg{
+    width: 20px;
+}
+.sideleft{
+    display: flex;
+    gap: 1vw;
+}
+.sideleft div{
+    display: flex;
+    gap: 1vw;
+    background-color: var(--bak-slide);
+    border: 1px solid var(--sconder-fnt-color);
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    color: var(--color-element-slide);
+    fill: var(--color-element-slide);
+}
+.sideleft div:hover{
+    background-color: rgba(128, 128, 128, 0.568);
+    transform: translateX(-2px);
+    cursor: pointer;
+}
