@@ -7,6 +7,10 @@
     --bk-close: #475569;
     --in-color: #0f1414;
     --sconder-fnt-color: #edeef0;
+
+    --color-table-main:#121212;
+    --colo-table-scondray:#1f1f1f;
+    --line:#515151;
 }
 
 * {
@@ -22,7 +26,7 @@ body {
 }
 
 .slide {
-    width: 25%;
+    width: 30%;
     background-color: var(--bak-slide);
     border-right: 1px var(--bak-card-slide) solid;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
@@ -375,7 +379,7 @@ img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
     gap: 1vw;
     background-color: var(--bak-slide);
     border: 1px solid var(--sconder-fnt-color);
-    padding: 2vh 1vw;
+    padding: 10px 5px;
     box-sizing: border-box;
     border-radius: 0.5rem;
     color: var(--color-element-slide);
@@ -386,3 +390,56 @@ img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
     transform: translateX(-2px);
     cursor: pointer;
 }
+
+/*============= start the table ===============  */
+
+table{
+    margin-top:6vh ;
+    color: white;
+    background-color: var(--color-table-main);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+    border-collapse: collapse;
+    padding-inline: 2vw;
+    
+}
+
+th{
+    padding-block: 5vh;
+    border-left:var(--line) solid 1px ;
+    text-align: left;
+    padding-inline: 1%; 
+    border-bottom:var(--line) solid 1px ;
+
+}
+td svg{
+    width: 20px;
+    fill: var(--color-element-slide);
+}
+td{
+    padding-block: 5vh;
+    background-color: var(--colo-table-scondray);
+    /* padding-inline: 1vw; */
+    border-left:var(--line) solid 1px ;
+    border-bottom:var(--line) solid 1px ;
+}
+td div{
+    display: flex;
+    align-items: center;
+    gap: 1vw; 
+    /* background-color: yellow; */
+    width: 100%;
+}
+
+td img[ src="./Public/images/1671446221395.jpeg"]{
+    width: 40px;
+    /* height: 50px; */
+    border-radius: 50%;
+}
+
+.box{
+    border-left: none;
+    width: 3%;
+    padding-inline-start:6px;
+}
+
+
