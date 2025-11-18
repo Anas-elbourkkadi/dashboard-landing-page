@@ -8,9 +8,9 @@
     --in-color: #0f1414;
     --sconder-fnt-color: #edeef0;
 
-    --color-table-main:#121212;
-    --colo-table-scondray:#1f1f1f;
-    --line:#515151;
+    --color-table-main: #121212;
+    --colo-table-scondray: #1f1f1f;
+    --line: #515151;
 }
 
 * {
@@ -26,63 +26,35 @@ body {
 }
 
 .slide {
-    width: 30%;
+    width: 35%;
     background-color: var(--bak-slide);
     border-right: 1px var(--bak-card-slide) solid;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-block: 2vh;
-    gap: 2vh;
     overflow: hidden;
     transition: 2s;
-    padding-inline: 15px;
+    padding-block: 2vh;
+}
+
+.containerparent1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9vw;
+
+
 }
 
 .title img {
     width: 40px;
 }
 
-.containerparent1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .title {
     display: flex;
+    color: var(--sconder-fnt-color);
     gap: 1vw;
 }
 
-#check {
-    display: none;
-}
-
-#check:checked~.slide {
-    width: 8%;
-}
-
-.slide h1 {
-    color: var(--sconder-fnt-color);
-}
-
-#check:checked~.slide p,
-#check:checked~.slide h1,
-#check:checked~.slide input {
-    display: none;
-}
-
-#check:checked~.slide .containerparent1 {
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-}
-
-.slide .containerparent1 label {
-    width: 30px;
-    padding-block: 5px;
+label[for="check"] {
     background-color: var(--bk-close);
     display: flex;
     justify-content: center;
@@ -92,17 +64,33 @@ body {
     box-sizing: border-box;
 }
 
-.slide .containerparent1 label:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+label[for=check]:hover {
     transform: translateX(-2px);
     cursor: pointer;
 }
 
-/* ==== syle the input in slider ========= */
+input[id="check"] {
+    display: none;
+}
+
+#check:checked+.slide {
+    width: 5%;
+}
+
+#check:checked~.slide .title,
+#check:checked~.slide .search,
+#check:checked~.slide ul p {
+    display: none;
+}
+
+/* ======= finished navbar the side bar for the web site ========  */
+.search {
+    padding-inline-start: 1vw;
+    padding-block: 3vh;
+}
 
 .slide input[type="text"] {
     padding-block: 1vh;
-    width: 85%;
     background-color: var(--in-color);
     border: none;
     color: var(--color-font-table);
@@ -111,32 +99,55 @@ body {
     background-repeat: no-repeat;
     background-size: 20px;
     padding-inline-start: 40px;
+    width: 80%;
 }
+
 
 input[type="text"]:focus {
     outline: none;
     border: 1px solid var(--bak-card-slide);
-
-
 }
 
-/* ======= list in slider ========== */
+/* =========finish the input in sidebar for the website========== */
 
-ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
+.list {
+    padding-inline: 1vw;
+}
+
+.list li svg {
+    width: 20px;
+    fill: var(--color-element-slide);
 }
 
 .list li {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    list-style-type: none;
-    padding: 10px;
+    padding-inline: 1vw;
+    padding-block: 2vh;
+    margin-block: 2vh;
+    color: var(--color-element-slide);
     border: 2px solid transparent;
     transition: 0.5s;
+}
 
+.list li div {
+    display: flex;
+    gap: 1vw;
+}
+
+.word,
+.num {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    color: var(--sconder-fnt-color);
+    background-color: var(--bk-close);
+    width: 4vw;
+    text-align: center;
+}
+
+.num {
+    background-color: red;
+    width: 2vw;
 }
 
 .list li:hover svg,
@@ -146,79 +157,45 @@ ul {
 }
 
 .list li:hover {
-
-    color: var(--bak-card-slide);
     border: 2px solid var(--bak-card-slide);
     box-shadow: 0 0 10px 0px var(--bak-card-slide);
     border-radius: 0.5rem;
 }
 
-li div {
-    display: flex;
-    align-items: end;
-    gap: 1vw;
-    color: var(--color-element-slide);
-
-}
-
-li svg {
-    width: 20px;
-    fill: var(--color-element-slide);
-}
-
-li .word {
-    width: 6vw;
-    padding-block: 5px;
-    background-color: var(--bk-close);
-    display: flex;
+#check:checked~.slide .list li {
     justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    color: var(--sconder-fnt-color);
-}
-
-li .num {
-    width: 2vw;
     padding-block: 1vh;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    color: var(--sconder-fnt-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-#check:checked~.slide li {
-    justify-content: center;
+/*=========== i finish the list in side bar======== */
 
-}
-
-/* ========= finish the list slider ============ */
 .line {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    color: var(--color-element-slide);
+    fill: var(--color-element-slide);
+    padding-inline: 1vw;
+    transition: 1.5s;
 }
 
 .line svg {
-    width: 30px;
-    fill: var(--color-element-slide);
+    width: 20px;
     cursor: pointer;
 }
 
-.line p {
-    color: var(--color-element-slide);
+.sentence {
+    color: var(--sconder-fnt-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-top: 2vh;
+    transition: 1.5s;
+
 }
 
 .sentence p {
-    color: var(--sconder-fnt-color);
-    padding: 2vh 1vw;
-    margin-bottom: 1vh;
-    margin-left: 1vw;
-
-
+    margin-inline-start: 2vw;
+    transition: 1.5s;
 }
 
 .sentence .first {
@@ -226,17 +203,15 @@ li .num {
     border-radius: 0.5rem;
     width: 80%;
     box-shadow: 0 0 8px var(--bak-card-slide);
-}
-
-.sentence {
-    transition: 1.5s;
-}
-
-#check:checked~.slide .line {
-    display: none;
+    padding-block: 2vh;
 }
 
 #group {
+    opacity: 0;
+}
+
+#check:checked~.slide .sentence,
+#check:checked~.slide .line {
     opacity: 0;
 }
 
@@ -245,88 +220,76 @@ li .num {
     opacity: 0;
 }
 
-/* ===============the last section in slide bar===================*/
-
-
-.scondelist li {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    color: var(--color-element-slide);
-    gap: 1vw;
-}
+/* ==== i finish the part 3 in side bar for web site ======= */
 
 .scondelist {
-    border-top: 1px solid var(--color-element-slide);
-    padding-block: 5vh;
-}
-
-/* ====the sconde pate in the last side==== */
-.container {
-    display: flex;
-    color: var(--color-element-slide);
-    align-items: center;
-    gap: 1vw;
-    padding-block-start: 5vh;
-}
-
-.container svg {
-    width: 30px;
-    fill: var(--color-element-slide)
-}
-
-#check:checked~.slide .scondelist,
-#check:checked~.slide .container {
-    display: none;
-}
-
-/* ===== parte table ======== */
-
-.table {
-    padding: 2vh 2vw;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    align-items: center;
+    padding-block: 8vh;
+    margin-block: 4vh;
+    border-top: 1px solid var(--color-element-slide);
+    margin-inline: 1vw;
+}
+
+.scondelist li,
+.container {
+    display: flex;
+    gap: 1vw;
+    color: var(--color-element-slide);
+    fill: var(--color-element-slide);
+    padding-block-end: 1vh;
+}
+
+.scondelist svg,
+.container svg {
+    width: 20px;
+}
+
+.container {
+    padding: 0 1vw;
+}
+
+#check:checked~.slide .container {
+    opacity: 0;
+}
+/* ==========i finish the side bar for mobile========= */
+.table{
     width: 100%;
 }
 
-.linetable {
+.tablecontainer{
     display: flex;
     gap: 1vw;
-    color: var(--color-element-slide);
+    color: var(--sconder-fnt-color);
+    padding: 2vh 2vw;
 }
-
-.linetable svg {
-    width: 20px;
+.linetable{
+    display: flex;
     fill: var(--color-element-slide);
-
-}
-
-.tablecontainer {
-    display: flex;
+    color: var(--color-element-slide);
     gap: 1vw;
-    color: var(--sconder-fnt-color)
 }
-
-/* ========line2 in the parte table========= */
-
-.tablecontainer2 {
+.table svg{
+    width: 20px;
+}
+/* ======finish the line 1 for part table======= */
+.tablecontainer2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--sconder-fnt-color);
+    padding-inline: 2vw;
 }
-
-.containerline2 {
-    display: flex;
-    align-items: center;
-    gap: 1vw;
-}
-
 .containerline2 img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+.containerline2{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
 
 .img {
@@ -344,7 +307,6 @@ img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
     position: relative;
     right: 40px;
 }
-
 .add{
     background-color: var(--bak-card-slide);
     padding: 2vh 2vw;
@@ -359,24 +321,18 @@ img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
     box-sizing: border-box;
     border-radius: 0.5rem;
 }
-/* ======= the line 3 in parte table ======== */
-
+/* ==== i finish the line 2 for the part table ======= */
 .navicons{
-    /* background-color: yellow; */
-    margin-top: 4vh;
     display: flex;
     justify-content: space-between;
+    margin: 2vh 2vw;
 }
-.navicons svg{
-    width: 20px;
-}
-.sideleft{
+
+.side,.side2,.side2 div,.side div{
     display: flex;
     gap: 1vw;
 }
-.sideleft div{
-    display: flex;
-    gap: 1vw;
+.side div,.side2 div{
     background-color: var(--bak-slide);
     border: 1px solid var(--sconder-fnt-color);
     padding: 10px 5px;
@@ -385,61 +341,182 @@ img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"] {
     color: var(--color-element-slide);
     fill: var(--color-element-slide);
 }
-.sideleft div:hover{
+
+
+.side div:hover, .side2 div:hover{
     background-color: rgba(128, 128, 128, 0.568);
     transform: translateX(-2px);
     cursor: pointer;
 }
+/* ==== i finish the line 3 for the part table ======= */
 
-/*============= start the table ===============  */
 
-table{
-    margin-top:6vh ;
-    color: white;
-    background-color: var(--color-table-main);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
-    border-collapse: collapse;
-    padding-inline: 2vw;
+@media screen and (max-width:480px) {
+    body{
+        flex-direction: column;
+    }
+    .slide {
+        width: 100%;
+        border-bottom: 1px var(--bak-card-slide) solid;
+        border-right: none;
+        height: 6vh;
+    }
+
+    .containerparent1 {
+        gap: 45vw;
+    }
+
+    #check:checked+.slide {
+        width: 100%;
+        height: 130vh;
+    }
+
+    #check:checked~.slide .title {
+        display: flex;
+    }
+
+    /* ======= finished navbar the side bar for the mobile ========  */
+    #check:checked~.slide .search {
+        display: block;
+        padding-inline-start: 8vw;
+    }
+
+    .search,
+    label[for="group"] {
+        display: none;
+    }
+
+    /*========= finish the input in the side bar for teh mobile================ */
+
+
+    #check:checked~.slide .list p {
+        display: flex;
+        justify-content: center;
+    }
+
+    #check:checked~.slide .list li {
+        justify-content: space-between;
+        padding-block: 2vh;
+    }
+
+    #check:checked~.slide .list {
+        padding-inline: 6vw;
+    }
+
+    .slide .list .word {
+        width: 10vw;
+    }
+
+    .num {
+        width: 4vw;
+    }
+
+    .list p,
+    .list svg {
+        display: none;
+    }
+
+    #check:checked~.slide .list svg {
+        display: flex;
+    }
+
+    /*========= finish the list in the side bar for teh mobile================ */
+    #check:checked~.slide label[for="group"]{
+        display: flex;
+    }
+    
+    .sentence p{
+        display: none;
+    }
+    #check:checked~.slide .sentence p{
+        display: flex;
+    }
+     #check:checked~.slide .line {
+        opacity: 1;
+        gap: 65vw;
+        padding-inline-start: 6vw;
+    } 
+
+    #check:checked~.slide .sentence {
+        opacity: 1;
+        padding-inline-start: 15vw;
+        margin-block-start: 5vh;
+    }
+    
+    #group:checked+label+.sentence p {
+        opacity: 0;
+    }
+
+    /* ==== i finish the part 3 in side bar for  ======= */
+    .scondelist{
+        opacity: 0;
+    }
+
+    #check:checked~.slide .container {
+        opacity: 1;
+        padding-inline-start: 4vw;
+    }
+    .container{
+        opacity: 0;
+    }
+
+    #check:checked~.slide .scondelist {
+        opacity: 1;
+        margin-inline: 6vw;
+    }
+
+    #check:checked~.slide .scondelist p {
+        display: flex;
+    }
+    /* ==========i finish the side bar for mobile========= */
+    #check:checked~.table{
+        display: none;
+    }
+    .tablecontainer2{
+        flex-direction: column;
+        align-items: start;
+    }
+    .containerline2{
+        flex-direction: row-reverse;
+        padding-block: 2vh;
+        align-items: center;
+        gap:4vw
+    }
+    .img{
+        position: relative;
+        left: 0px;
+    }
+    .add{
+        padding: 1vh 2vw;
+    }
+    .add+div{
+        padding:1vh 2vw;
+    }
+    img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"]{
+        top:3px
+    }
+    /* ===== finish the line 2 for the mobile in the parte table======= */
+    .navicons{
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .side2{
+        gap: 4vw;
+    }
+    .side{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 12px;
+    }
+    /* .side div{
+        width: 50%;
+    } */
+    .side div:nth-child(3){
+        grid-column: 1 / 3;
+    }
+    .side2{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
     
 }
-
-th{
-    padding-block: 5vh;
-    border-left:var(--line) solid 1px ;
-    text-align: left;
-    padding-inline: 1%; 
-    border-bottom:var(--line) solid 1px ;
-
-}
-td svg{
-    width: 20px;
-    fill: var(--color-element-slide);
-}
-td{
-    padding-block: 5vh;
-    background-color: var(--colo-table-scondray);
-    /* padding-inline: 1vw; */
-    border-left:var(--line) solid 1px ;
-    border-bottom:var(--line) solid 1px ;
-}
-td div{
-    display: flex;
-    align-items: center;
-    gap: 1vw; 
-    /* background-color: yellow; */
-    width: 100%;
-}
-
-td img[ src="./Public/images/1671446221395.jpeg"]{
-    width: 40px;
-    /* height: 50px; */
-    border-radius: 50%;
-}
-
-.box{
-    border-left: none;
-    width: 3%;
-    padding-inline-start:6px;
-}
-
-
