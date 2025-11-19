@@ -553,14 +553,15 @@ th{
         grid-template-columns: repeat(4,1fr);
     }
     /* ===========i finish the line 3 for the mobile in part table ====== */
-     /* th,td{
-        width: 100px;
-    } */
-    /* .git{
-        width: 400px;
-    } */
+    td,th{
+        width: 500px;
+    }
     .containertable{
-        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+    .containertable::-webkit-scrollbar-button{
+        width:  20vw;
+        background-color: #00abb8;
     }
    
 }
