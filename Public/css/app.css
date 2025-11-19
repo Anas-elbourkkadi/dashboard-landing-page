@@ -529,7 +529,7 @@ th{
         padding:1vh 2vw;
     }
     img[src="./Public/images/WhatsApp Image 2024-03-13 at 19.35.49(2).jpeg"]{
-        top:3px
+        top:1px
     }
     /* ===== finish the line 2 for the mobile in the parte table======= */
     .navicons{
@@ -553,10 +553,12 @@ th{
         grid-template-columns: repeat(4,1fr);
     }
     /* ===========i finish the line 3 for the mobile in part table ====== */
-    table th,td{
+     /* th,td{
         width: 100px;
-    }
-    
+    } */
+    /* .git{
+        width: 400px;
+    } */
     .containertable{
         overflow-x: scroll;
     }
