@@ -369,7 +369,7 @@ table td, th{
     width: calc(100%/6); 
     background-color: var(--colo-table-scondray);
     border:var(--line) solid 1px ;
-    padding-inline: 1vw;
+    padding-inline: 10px;
 
 }
 th{
@@ -382,6 +382,7 @@ th{
     width: 5%;
     text-align: center;
 }
+
 
 /* ==========i finish the project for the website=========== */
 
@@ -552,5 +553,12 @@ th{
         grid-template-columns: repeat(4,1fr);
     }
     /* ===========i finish the line 3 for the mobile in part table ====== */
+    table th,td{
+        width: 100px;
+    }
     
+    .containertable{
+        overflow-x: scroll;
+    }
+   
 }
